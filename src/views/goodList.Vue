@@ -110,6 +110,16 @@
             NavHeader,
             NavFooter,
             BreadCrumb
+        },
+        mounted:function () {
+            this.getGoodsList();
+        },
+        methods:{
+            getGoodsList(){
+               this.$http.get("goods").then(res => {
+                   console.log(res);
+               })
+            },
         }
     }
 </script>
