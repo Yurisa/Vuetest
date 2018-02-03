@@ -30,7 +30,7 @@
                 <ul>
                   <li v-for="(item,index) in goodList" :key="item.productId">
                     <div class="pic">
-                      <a href="#"><img v-lazy="'static/'+item.prodcutImg" alt=""></a>
+                      <a href="#"><img v-lazy="'static/'+item.productImage" alt=""></a>
                     </div>
                     <div class="main">
                       <div class="name">{{item.productName}}</div>
@@ -93,9 +93,9 @@
         },
         methods:{
             getGoodsList(){
-               this.$http.get("goods").then(res => {
+               this.$http.get("/goods").then(res => {
                    console.log(res);
-                   this.goodList = res.data.result;
+                   this.goodList = res.data.result.list;
                }).catch(err => {
                  console.log(err);
                })
