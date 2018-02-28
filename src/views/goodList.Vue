@@ -93,7 +93,7 @@
         },
         methods:{
             getGoodsList(){
-               this.$http.get("/goods").then(res => {
+               this.$http.get("http://localhost:3000/goods").then(res => {
                    console.log(res);
                    this.goodList = res.data.result.list;
                }).catch(err => {
